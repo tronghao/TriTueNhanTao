@@ -1,0 +1,2 @@
+timdautien([Dau|_],Dau).
+timhai([_,Y|_],Y).
