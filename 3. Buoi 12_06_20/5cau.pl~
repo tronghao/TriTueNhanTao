@@ -1,0 +1,72 @@
+sentence(s(NP, VP))-->np(NP), vp(VP).
+
+np(np(NNP))-->nnp(NNP).
+
+np(np(NN))-->nn(NN) .
+
+np(np(PRP))-->prp(PRP).
+
+np(np(CD, N_UNIT, NN))-->cd(CD), n_unit(N_UNIT), nn(NN).
+np(np(N_UNIT,NN, ADJP))-->n_unit(N_UNIT), nn(NN), adjp(ADJP).
+np(np(CD, NP))-->cd(CD), np(NP).
+
+vp(vp(VB, NP))-->vb(VB), np(NP).
+
+vp(vp(RB, VB, PP))-->rb(RB), vb(VB), pp(PP).
+vp(vp(RB, VB, NP))-->rb(RB), vb(VB), np(NP).
+adjp(adjp(JJ))-->jj(JJ).
+
+adjp(adjp(RB, JJ))-->rb(RB), jj(JJ).
+pp(pp(IN, NP))-->in(IN), np(NP).
+
+prp(prp(nó))-->[nó].
+
+nnp(nnp('Nam'))-->['Nam'].
+
+nn(nn(nha))--> [nha].
+
+nn(nn('ngoai o'))-->[ngoai,o].
+/*
+nn(nn(sn))-->[sAn].
+
+nn(nn(truyén) )-->[truyén].
+
+n_unit(n_unit(cdi) )-->[cdi].
+
+n_unit(n_unit(can) )-->[can].
+
+vb(vb(mua) ) --> [mua] .
+
+vb(vb(4))-->[d].
+
+vb(vb(cd) ) --> [cd].
+
+vb(vb(ngéi) )-->[ngdi] .
+
+vb(vb(doc))-->[doc] .
+
+35(535 (46) ) --> [46].
+
+35 (33 (r6ng) ) -->[réng].
+
+rb(rb(rat))-->[rat].
+
+rb (rb (thudéng) } -->[thudng] .
+
+rb(rb (hay) )-->[hay] .
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
