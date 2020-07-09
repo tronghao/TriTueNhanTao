@@ -1,3 +1,9 @@
+dautien([], []).
+dautien([D|_], D).
+
+thuhai([], []).
+thuhai([_, X | _], X).
+
 cuoi([], []).
 cuoi([X], X).
 cuoi([_|C], KQ) :- cuoi(C, KQ1), KQ is KQ1.
@@ -7,7 +13,7 @@ xoadautien([D|C], X, KQ) :- D =:= X, KQ = C, !.
 xoadautien([D|C], X, KQ) :- D =\= X, xoadautien(C, X, KQ1), KQ = [D | KQ1].
 
 xoatrung([], _, []).
-xoatrung([D|C], X, KQ) :- D =:= X, xoatrung(C, X, KQ1), KQ = KQ1, !.
+xoatrung([D|C], X, KQ) :- D =:= X,  KQ = C.
 xoatrung([D|C], X, KQ) :- D =\= X, xoatrung(C, X, KQ1), KQ = [D|KQ1].
 
 phantuke([]).
@@ -32,3 +38,4 @@ phantu([X], X, []).
 phantu([D], X, KQ) :- D =\= X, KQ = [D].
 phantu([X|C], X, KQ) :- phantu(C, X, KQ1), KQ = KQ1.
 phantu([D|C], X, KQ) :- D =\= X, phantu(C, X, KQ1), KQ = [D|KQ1].
+
