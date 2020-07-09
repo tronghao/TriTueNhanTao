@@ -1,9 +1,3 @@
-dautien([], []).
-dautien([D|_], D).
-
-thuhai([], []).
-thuhai([_, X | _], X).
-
 cuoi([], []).
 cuoi([X], X).
 cuoi([_|C], KQ) :- cuoi(C, KQ1), KQ is KQ1.
@@ -19,3 +13,22 @@ xoatrung([D|C], X, KQ) :- D =\= X, xoatrung(C, X, KQ1), KQ = [D|KQ1].
 phantuke([]).
 phantuke([_]) :- !.
 phantuke([X, Y|C]) :- write(X), write('-'), write(Y), nl, phantuke([Y|C]).
+
+lonnhat([X,Y], KQ) :- X >= Y, KQ is X.
+lonnhat([X,Y], KQ) :- X < Y, KQ is Y.
+lonnhat([D|C], KQ) :- lonnhat(C, KQ1), D >= KQ1 , KQ is D.
+lonnhat([D|C], KQ) :- lonnhat(C, KQ1), D< KQ1, KQ is KQ1.
+
+tong46([], []).
+tong46([X], KQ) :- X mod 4 =:= 0, KQ = [].
+tong46([X], KQ) :- X mod 6 =:= 0, KQ = [].
+tong46([X], KQ) :- X mod 4 =\= 0, X mod 6 =\= 0, KQ = [X].
+tong46([D|C], KQ) :- D mod 4 =:= 0, tong46(C, KQ1), KQ = KQ1.
+tong46([D|C], KQ) :- D mod 6 =:= 0, tong46(C, KQ1), KQ = KQ1.
+tong46([D|C], KQ) :- D mod 4 =\= 0, D mod 6 =\= 0,  tong46(C, KQ1), KQ = [D|KQ1].
+
+phantu([], _, []).
+phantu([X], X, []).
+phantu([D], X, KQ) :- D =\= X, KQ = [D].
+phantu([X|C], X, KQ) :- phantu(C, X, KQ1), KQ = KQ1.
+phantu([D|C], X, KQ) :- D =\= X, phantu(C, X, KQ1), KQ = [D|KQ1].
